@@ -93,6 +93,30 @@ def create_record(request):
 
 
 
+#  update a record
+@login_required(login_url=login)
+def update_record(request, pk):
+     record = Record.objects.get(id=pk)
+
+     form = UpdateRecordForm(instance=record)
+
+     if request.method == "POST":
+
+          form = UpdateRecordForm(request.POST, instance=record)
+
+          if form.is_valid():
+
+               form.save()
+
+               return redirect('dashboard')
+          
+     context = {'form':form}
+     return render(request, 'crmApp/update.html', context=context)
+
+
+
+
+
 # logout a user
 
 def logout(request):
