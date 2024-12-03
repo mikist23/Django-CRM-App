@@ -19,7 +19,7 @@
         <form method="POST" autocomplete="off">
 
             {% csrf_token %}
-{% comment %} 
+
             {{form.first_name|as_crispy_field}}
 
             <br>
@@ -48,9 +48,9 @@
 
             <br>
 
-            {{form.country|as_crispy_field}} {% endcomment %}
+            {{form.country|as_crispy_field}} 
 
-            {{form|crispy}}
+            
 
 
             <br>

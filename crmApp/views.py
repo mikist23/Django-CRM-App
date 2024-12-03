@@ -115,6 +115,26 @@ def update_record(request, pk):
 
 
 
+#  view a record
+@login_required(login_url=login)
+def view_record(request, pk):
+      record = Record.objects.get(id=pk)
+
+      context = {'record':record}
+
+
+      return render(request, 'crmApp/view.html', context=context)
+
+
+#  delete a record
+@login_required(login_url=login)
+def delete_record(request, pk):
+      record = Record.objects.get(id=pk)
+
+      record.delete()
+
+
+      return render(request, 'crmApp/dashboard.html')
 
 
 # logout a user

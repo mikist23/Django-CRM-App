@@ -20,7 +20,7 @@
                 
                 {% csrf_token %}
 
-                {% comment %} {{form.username|as_crispy_field}}
+                 {{form.username|as_crispy_field}}
 
                 <br>
 
@@ -28,8 +28,8 @@
 
                 <br>
 
-                {{form.password2|as_crispy_field}} {% endcomment %}
-                {{form|crispy}}
+                {{form.password2|as_crispy_field}} 
+                
 
                 <br>
 
